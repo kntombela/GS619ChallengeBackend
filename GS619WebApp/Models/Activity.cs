@@ -25,10 +25,12 @@ namespace GS619Challenge.Models
 
         public double Distance { get; set; }
 
-        public double Duration { get; set; }
+        public int Hours { get; set; }
+
+        public int Minutes { get; set; }
+
+        public int Seconds { get; set; }
 
         public string Message { get; set; }
-
-        public string ImageUrl { get; set; }
     }
 }

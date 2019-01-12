@@ -29,11 +29,13 @@ namespace GS619WebApp.Migrations
 
                     b.Property<double>("Distance");
 
-                    b.Property<double>("Duration");
-
-                    b.Property<string>("ImageUrl");
+                    b.Property<int>("Hours");
 
                     b.Property<string>("Message");
+
+                    b.Property<int>("Minutes");
+
+                    b.Property<int>("Seconds");
 
                     b.Property<int>("Type");
 

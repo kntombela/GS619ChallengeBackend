@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GS619WebApp.Migrations
 {
     [DbContext(typeof(GS619WebAppContext))]
-    [Migration("20190107134038_Initial")]
+    [Migration("20190112070345_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,11 +31,13 @@ namespace GS619WebApp.Migrations
 
                     b.Property<double>("Distance");
 
-                    b.Property<double>("Duration");
-
-                    b.Property<string>("ImageUrl");
+                    b.Property<int>("Hours");
 
                     b.Property<string>("Message");
+
+                    b.Property<int>("Minutes");
+
+                    b.Property<int>("Seconds");
 
                     b.Property<int>("Type");
 
