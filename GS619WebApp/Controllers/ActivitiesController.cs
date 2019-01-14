@@ -49,7 +49,27 @@ namespace GS619WebApp.Controllers
 
         // GET: api/users/898239-239khkjhskdhsd-khkshd/activities
         [HttpGet("~/api/users/{userId}/activities")]
-        public async Task<IActionResult> GetActivitiesByUser([FromRoute] string userId, bool isFiltered = false)
+        public async Task<IActionResult> GetActivitiesByUser([FromRoute] string userId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+
+            var activities = await GetActivityByUserId(userId);
+
+            if (activities == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(activities);
+        }
+
+        // GET: api/users/898239-239khkjhskdhsd-khkshd/activities
+        [HttpGet("~/api/users/{userId}/activities/top7")]
+        public async Task<IActionResult> GetTop7ActivitiesByUser([FromRoute] string userId)
         {
             if (!ModelState.IsValid)
             {
